@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-family: sans-serif;
+		}
+		.messages-container,.new-message{
+			display: block;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			background: #F1F1F1;
+			padding: 5px;
+			border:solid 1px #C9C9C9;
+			border-radius: 5px;
+			box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+		}
+		.message{
+			display: block;
+			width: 90%;
+			margin-right: auto;
+			margin-left: auto;
+			margin-bottom: 5px;
+		}
+		.user{
+			font-size: 15px;
+			color: #C9C9C9;
+		}
+		.message p{
+			font-size: 14px;
+			background: #fafafa;
+			padding: 5px;
+			border-radius: 5px;
+			margin-top: 0px;
+			border:1px solid #EEE;
+			color:#666;
+		}
+		.new-message{
+            margin-top: 10px;
+		}
+		h3:before{
+			content: "::"
+		}
+		h3:after{
+			content: "::"
+		}
+		h3{
+			padding-left: 10px;
+			color:#C1C1C1;
+
+		}
+		.name,.message-content{
+			display: block;
+			margin-left: 5%;
+            margin-bottom: 5px;
+            
+		}
+		label{
+			color:#C3C3C3;
+			display: block;
+			padding-left: 5px;
+			text-align: left;
+		}
+		.name input{
+			border-radius: 5px;
+			border:1px solid #C3C3C3;
+			padding: 8px;
+		}
+		button{
+			background: #FAFAFA;
+			border:solid 1px #EEE;
+			padding: 5px;
+			min-width: 100px;
+			margin-right: auto;
+			margin-left: auto;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="messages-container">
+		
+	</div>
+	<div class="new-message">
+		<h3>Add comment</h3>
+		<div class="name">
+			<label for="">Name (*): </label>
+			<input type="text" placeholder="Jone Doe" name="name">
+		</div>
+		<div class="message-content">
+			<label for="">comment (*)</label>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="your comment"></textarea>
+		</div>
+		<button>Submit</button>
+	</div>
+
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script  type="text/javascript">
+    	function loadMessages(){
+    		$('.messages-container').html('')
+    		$.get('https://projects.dev.local/projects/mini-project/comments.php',function(data){
+    			content = JSON.parse(data)
+    			for(i = 0; i< content.length;i++){
+    				node = "<div class='message'><div class='user'>"+content[i].name+" "+ content[i].time+"</div><p>"+content[i].message+"</p></div>"
+    				$('.messages-container').append(node)
+    			}
+    		})
+    	}
+    	$(document).ready(function(e){
+    		loadMessages()
+    		$('button').click(function(){
+    			$(this).attr('disabled','disabled')
+    			b = true
+    			name = $('input').val()
+    			if(name.length <= 2){
+    				b = false
+    				alert("Please fill name field")
+    			}
+                comment = $('textarea').val()
+    			if(comment.length <= 5){
+    				b = false
+    				alert("Please fill comment field")
+    			}
+    			console.log("hello")
+    			$.post('https://projects.dev.local/projects/mini-project/comments.php',{name:name , message:comment},function(data,status){
+    				//success
+    				alert("comments add")
+    				loadMessages()
+    			}).fail(function(d){console.log(d)})
+    			console.log("error")
+
+    			$(this).removeAttr('disabled')  
+    		})
+    	})
+	</script>
+	</body>
+</html>
