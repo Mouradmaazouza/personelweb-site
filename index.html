@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Mourad Portfolio website </title>
+        <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+        
+              *,::before,::after{
+                box-sizing: border-box;
+              }
+              html{
+                scroll-behavior: smooth;
+              }
+              body{
+                background-image: linear-gradient(direction, color-stop1, color-stop2);
+                margin: 48px 0 0 0;
+                font-family: 'Poppins', sans-serif;
+                font-size: 16px;
+                color: #0E2431;
+              }
+              h1,h2,p{
+                margin: 0;
+              }
+              ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+              }
+              a{
+                text-decoration: none;
+                text-align:center ;
+              }
+              img{
+                max-width: 100%;
+                height: auto;
+                display: block;
+                
+               margin: auto;
+              }
+              .header {
+                overflow: hidden;
+                background-color: #1ec8d4;
+                padding: 20px 10px;
+                width: 600px;
+                margin: auto;
+                text-align: center;
+  
+                 }
+
+
+              .full-name {
+                  font-size: 40px;
+                   text-transform: uppercase;
+                   margin-bottom: 5px;
+                    }
+                    
+               .first-name {
+                       font-weight: 700;
+                        }
+  
+                .last-name {
+                          font-weight: 300;
+                             }
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 137px;
+  left: 0;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+}
+.sidenav a:hover {
+  color: white;
+}
+.active {
+  background-color: #1ec8d4;
+  color: white;
+}
+.rightside {
+  width: 250px;
+  position: fixed;
+  z-index:1;
+  top:300px;
+  right: 1%;
+  background: #f8fafc;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+.rightside a {
+  padding: 6px 8px 6px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #141616;
+  text-align: center;
+  display: block;
+  }
+.rightside a:hover {
+  color: #064579;
+}
+.button {
+  background-color: #1ec8d4; 
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin:20px 45px;
+  cursor: pointer;
+}
+.button4 {border-radius: 12px;}
+.login {
+  float: left;
+}
+.login input[type=text] {
+  padding: 6px;
+  margin: auto;
+  font-size: 17px;
+  border: none;
+  width:100px; 
+}
+.login button {
+  float: right;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 100px;
+  background: rgb(8, 175, 241);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.login button:hover {
+  background: #ccc;
+}
+@media screen and (max-width: 600px) {
+  .login {
+    float: none;
+  }
+}
+.content {
+  margin-left: 220px;
+  padding-left: 20px;
+  margin-right: 220px;
+  padding-right: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  height:auto; /* Should be removed. Only for demonstration */
+  text-align: center;
+}
+ .content a {
+  padding: 18px ;
+  text-decoration: none;
+  text-align: center;
+}
+.footer {
+  margin-left: 220px;
+  padding-left: 20px;
+  margin-right: 220px;
+  padding-right: 20px;
+  background-color: #064579;
+  padding: 10px;
+  height: 160px; 
+  text-align: center;
+}
+.footer a {
+  color: #ddd;
+}
+
+      </style>        
+           <body>
+            <div class="header">
+              <div class="full-name">
+                <span class="first-name">MAAZOUZA</span> 
+                <span class="last-name">MOURAD</span>
+              </div>
+             
+            </div>
+            <div class="sidenav ">
+              <a href="#" class="active">HOME</a>
+              <a href="assets/CV.html">C.V</a>
+              <a href="assets/gallery.html">GALLERY</a>
+              <a href="assets/comment.html">comment</a>
+              
+            </div>
+            <div class="rightside">
+              <form class="login" >
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+              </form>
+             <button class="button button4"><a href="assets/signup.html">SIGN UP</a></button> 
+              <div>    <a href="" class="fa fa-facebook">__FACEBOOK </a></div>
+              <div>    <a href="" class="fa fa-youtube">__youtub</a></div>
+              <div><a href="" class="fa fa-yahoo"> __yahoo</a></div>
+            </div>
+
+            <div class="content">
+              <section>
+              <div><a href="/assets/img/About.jpg.jpg"></a></div>
+              <h1>HELLO,<br>I'AM<span style="color:rgb(22, 216, 241)">MOURAD</span> <br>WELCOME TO MY WEBSITE</h1>
+        
+              <h1 style="padding: 50px" ><span style="color:rgb(22, 216, 241)  "  >About me</span> </h1>
+              <div><img src="assets/img/perfile.jpg.jpg" alt="" width="300" height="200"></div>
+              <p style="padding: 50px">my name is mourad im from illizi the desert of algeria i have 24 years old <br> im a student of computer science in batna 2 university im a web disigner <br> i like football and programing .</p>
+            </section>
+            </div>
+
+        <footer class="footer">
+            <p class="footer__title">WELCOME</p>
+            <a href="#" class="fa fa-whatsapp">__whatsapp:+213696866948</a>  
+            <div>    <a href="/https://www.facebook.com/profile.php?id=100051809293476" class="fa fa-facebook">__FACEBOOK :MOURAD </a></div>
+            <div><a href="#" class="fa fa-google"> __GMAIL :mourad3300005@gmail.com </a></div>
+            <p> created by mourad maazouza @</p>
+        </footer>
+
+
+   
+    </body>
+</html>
